@@ -79,21 +79,20 @@ NSSU 특징
 
 NSSU 제약 사항
 --------------
-1. Master RE와 Backup RE는 같은 OS 버전이어야 함.  
-2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.  
-  + CLI: set virtual-chassis preprovisioned  
-
-***3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )***  
-4. VC members should be connected in ring topology  
-5. chassis should be configured with no-split-detection  
+1. Master RE와 Backup RE는 같은 OS 버전이어야 함.
+2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.
+  + CLI: set virtual-chassis preprovisioned
+***3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )***
+4. VC members should be connected in ring topology
+5. chassis should be configured with no-split-detection
   + CLI: set virtual-chassis no-split-detection
-6. enable GRES (Graceful routing engine switchover)  
+6. enable GRES (Graceful routing engine switchover)
   + CLI: set chassis redundancy graceful-switchover
-7. enable NSR (Non-stop active routing)  
+7. enable NSR (Non-stop active routing)
   + CLI: set routing-options nonstop-routing
-8. enable NSB (Non-stop brigding) - 선택 사항  
+8. enable NSB (Non-stop brigding) - 선택 사항
   + CLI: set protocols layer2-control nonstop-bridging
-9. request system snapshot 명령 을 사용하여 각 라우팅 엔진의 시스템 소프트웨어를 외부 저장 장치에 백업(USB 백업) - 선택 사항  
+9. request system snapshot 명령 을 사용하여 각 라우팅 엔진의 시스템 소프트웨어를 외부 저장 장치에 백업(USB 백업) - 선택 사항
   + no-split-detection은 Routing-Engine을 3개 이상으로 할 경우 설정하면 안됨
 
 NSSU 동작 방식
