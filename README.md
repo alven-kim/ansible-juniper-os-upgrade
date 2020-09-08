@@ -81,7 +81,7 @@ NSSU 제약 사항
 --------------
 1. Master RE와 Backup RE는 같은 OS 버전이어야 함.
 2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.
-  + CLI: set virtual-chassis preprovisioned. 
+  + CLI: set virtual-chassis preprovisioned.  
 **3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )**
 4. VC members should be connected in ring topology
 5. chassis should be configured with no-split-detection
