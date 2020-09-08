@@ -20,7 +20,7 @@ Dependency Module(Requirements.txt)
 --------
  - 꼭... Ansible로 OS Upgarde하기 전에 현재 Juniper 장비의 OS가 업그레이드가 정상적으로 되는지 확인 후에 하자...  
 처음에 무작정 앤서블로 했는데 막힌 요소가 너무나 많았다. 현재 OS가 ISSU를 지원하지 않는 OS인 경우도 있었고, 앤서블의 변수가 지원되지 않는 변수를 쓰기도 했었고.. QFX5110에 QFX5100 OS를 입력해서 안되기도 했었고.. 정말 많은 에러가 있었다.  
- **<U>+ 꼭! 현재 OS에서 테스트 완료 후에 앤서블로 해보자</U>**  
+<U>**+ 꼭! 현재 OS에서 테스트 완료 후에 앤서블로 해보자**</U>  
 
  - NSSU를 수행 시, Master RE를 설치 후, Backup으로 전환 할 때 netconf 세션이 중단 되는 이슈 존재  
   + (https://forums.juniper.net/t5/Junos-Automation-Scripting/How-to-do-NSSU-with-Ansible-via-SSH-NetConf-as-session/td-p/462509)  
@@ -81,8 +81,8 @@ NSSU 제약 사항
 --------------
 1. Master RE와 Backup RE는 같은 OS 버전이어야 함.  
 2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.  
-  - CLI: set virtual-chassis preprovisioned
-**<U>3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )</U>**
+  - CLI: set virtual-chassis preprovisioned  
+<U>**3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )**</U>  
 4. VC members should be connected in ring topology  
 5. chassis should be configured with no-split-detection  
   - CLI: set virtual-chassis no-split-detection
@@ -106,7 +106,7 @@ NSSU 동작 방식
 7. 마스터는 라인 카드 역할에있는 구성원 스위치에 새 소프트웨어 이미지를 설치하고 한 번에 하나씩 재부팅합니다. 마스터는 다음 멤버에서 소프트웨어 업그레이드를 시작하기 전에 각 멤버가 온라인 상태가되고 활성화 될 때까지 기다립니다.
 8. 라인 카드 역할에있는 모든 구성원이 업그레이드되면 마스터가 단계적 라우팅 엔진 전환을 수행하고 업그레이드 된 백업이 마스터가됩니다.
 9. 원래 마스터의 소프트웨어가 업그레이드되고 원래 마스터가 자동으로 재부팅됩니다. 원래 마스터가 Virtual Chassis에 다시 가입 한 후에는 선택적으로 우아한 라우팅 엔진 전환을 요청하여 제어권을 되돌릴 수 있습니다.  
-**<U>10. 즉, NSSU가 정상적으로 마치게 되면, 기존에 backup이었던 1번 장비가 Master로 변환된 상태</U>**
+<U>**10. 즉, NSSU가 정상적으로 마치게 되면, 기존에 backup이었던 1번 장비가 Master로 변환된 상태**</U>
 
 Virtual-Chassis 구성 방안 2가지
 -------------------------------
