@@ -21,7 +21,7 @@ Dependency Module(Requirements.txt)
  - 꼭... Ansible로 OS Upgarde하기 전에 현재 Juniper 장비의 OS가 업그레이드가 정상적으로 되는지 확인 후에 하자...  
 처음에 무작정 앤서블로 했는데 막힌 요소가 너무나 많았다. 현재 OS가 ISSU를 지원하지 않는 OS인 경우도 있었고, 앤서블의 변수가 지원되지 않는 변수를 쓰기도 했었고.. QFX5110에 QFX5100 OS를 입력해서 안되기도 했었고.. 정말 많은 에러가 있었다.  
 ```diff
-+ + 꼭! 현재 OS에서 테스트 완료 후에 앤서블로 해보자  
+ + 꼭! 현재 OS에서 테스트 완료 후에 앤서블로 해보자  
 ```
 
  - NSSU를 수행 시, Master RE를 설치 후, Backup으로 전환 할 때 netconf 세션이 중단 되는 이슈 존재  
@@ -84,7 +84,7 @@ NSSU 제약 사항
 1. Master RE와 Backup RE는 같은 OS 버전이어야 함.  
 2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.  
   - CLI: set virtual-chassis preprovisioned
-<span style="color:blue">3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )</span>  
+![#1589F0]3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )`#1589F0`
 4. VC members should be connected in ring topology  
 5. chassis should be configured with no-split-detection  
   - CLI: set virtual-chassis no-split-detection
