@@ -82,6 +82,7 @@ NSSU 제약 사항
 1. Master RE와 Backup RE는 같은 OS 버전이어야 함.  
 2. NSSU는 Routing-Engine이 여러개인 장비에서만 사용 가능하다.  
   + CLI: set virtual-chassis preprovisioned  
+
 ***3. virtual-chassis를 pre-provisioning으로 구성하여야만 NSSU가 사용될 수 있음. ( 가장 중요 )***  
 4. VC members should be connected in ring topology  
 5. chassis should be configured with no-split-detection  
@@ -106,6 +107,7 @@ NSSU 동작 방식
 7. 마스터는 라인 카드 역할에있는 구성원 스위치에 새 소프트웨어 이미지를 설치하고 한 번에 하나씩 재부팅합니다. 마스터는 다음 멤버에서 소프트웨어 업그레이드를 시작하기 전에 각 멤버가 온라인 상태가되고 활성화 될 때까지 기다립니다.
 8. 라인 카드 역할에있는 모든 구성원이 업그레이드되면 마스터가 단계적 라우팅 엔진 전환을 수행하고 업그레이드 된 백업이 마스터가됩니다.
 9. 원래 마스터의 소프트웨어가 업그레이드되고 원래 마스터가 자동으로 재부팅됩니다. 원래 마스터가 Virtual Chassis에 다시 가입 한 후에는 선택적으로 우아한 라우팅 엔진 전환을 요청하여 제어권을 되돌릴 수 있습니다. 
+
 ***10. 즉, NSSU가 정상적으로 마치게 되면, 기존에 backup이었던 1번 장비가 Master로 변환된 상태*** 
 
 Virtual-Chassis 구성 방안 2가지
